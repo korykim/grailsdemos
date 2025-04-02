@@ -22,6 +22,16 @@ class PostController {
         respond new Post(params)
     }
 
+    def search() {
+        params.max = Math.min(params.max ? params.int('max') : 10, 100)
+        String query = params.query
+        
+        def postList = postService.search(query, params)
+        def postCount = postList.totalCount
+        
+        respond postList, model:[postList: postList, postCount: postCount, query: query]
+    }
+
     def save(Post post) {
         if (post == null) {
             notFound()

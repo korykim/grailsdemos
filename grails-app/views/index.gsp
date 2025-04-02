@@ -6,6 +6,7 @@
 </head>
 <body>
 <content tag="nav">
+<!-- 
     <li class="dropdown">
         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Application Status <span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -40,7 +41,9 @@
             </g:each>
         </ul>
     </li>
+     -->
 </content>
+
 
 <div class="svg" role="presentation">
     <div class="grails-logo-container">

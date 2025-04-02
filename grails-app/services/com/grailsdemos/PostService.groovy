@@ -1,18 +1,42 @@
 package com.grailsdemos
 
-import grails.gorm.services.Service
+import grails.gorm.transactions.Transactional
 
-@Service(Post)
-interface PostService {
+@Transactional
+class PostService {
 
-    Post get(Serializable id)
+    Post get(Serializable id) {
+        return Post.get(id)
+    }
 
-    List<Post> list(Map args)
+    List<Post> list(Map args) {
+        return Post.list(args)
+    }
 
-    Long count()
+    Long count() {
+        return Post.count()
+    }
 
-    void delete(Serializable id)
+    void delete(Serializable id) {
+        Post.get(id)?.delete()
+    }
 
-    Post save(Post post)
+    Post save(Post post) {
+        post.save()
+        return post
+    }
 
+    List<Post> search(String query, Map args) {
+        if (!query) {
+            return list(args)
+        }
+        
+        return Post.createCriteria().list(args) {
+            or {
+                ilike('title', "%${query}%")
+                ilike('content', "%${query}%")
+            }
+            order('dateCreated', 'desc')
+        }
+    }
 }
