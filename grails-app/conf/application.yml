@@ -15,6 +15,9 @@ grails:
         scriptlet: html
         taglib: none
         staticparts: none
+  i18n:
+    locale: zh_CN
+    default_locale: zh_CN
   plugin:
     springsecurity:
       gsp:
