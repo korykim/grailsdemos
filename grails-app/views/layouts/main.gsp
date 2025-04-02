@@ -55,12 +55,7 @@
         .container-fluid.mt-4 {
             flex: 1;
         }
-        .footer {
-            margin-top: 30px;
-            padding: 20px 0;
-            background-color: #f5f5f5;
-            border-top: 1px solid #ddd;
-        }
+         
     </style>
 
     <g:layoutHead/>
@@ -160,30 +155,13 @@
 <asset:javascript src="application.js"/>
 
 <div class="footer" role="contentinfo">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col">
-                <a href="https://guides.grails.org" target="_blank">
-                    <asset:image src="advancedgrails.svg" alt="Grails Guides" class="float-left"/>
-                </a>
-                <strong class="centered"><a href="https://guides.grails.org" target="_blank">Grails Guides</a></strong>
-                <p>Building your first Grails app? Looking to add security, or create a Single-Page-App? Check out the <a href="https://guides.grails.org" target="_blank">Grails Guides</a> for step-by-step tutorials.</p>
-
-            </div>
-            <div class="col">
-                <a href="https://docs.grails.org" target="_blank">
-                    <asset:image src="documentation.svg" alt="Grails Documentation" class="float-left"/>
-                </a>
-                <strong class="centered"><a href="https://docs.grails.org" target="_blank">Documentation</a></strong>
-                <p>Ready to dig in? You can find in-depth documentation for all the features of Grails in the <a href="https://docs.grails.org" target="_blank">User Guide</a>.</p>
-
-            </div>
-            <div class="col">
-                <a href="https://slack.grails.org" target="_blank">
-                    <asset:image src="slack.svg" alt="Grails Slack" class="float-left"/>
-                </a>
-                <strong class="centered"><a href="https://slack.grails.org" target="_blank">Join the Community</a></strong>
-                <p>Get feedback and share your experience with other Grails developers in the community <a href="https://slack.grails.org" target="_blank">Slack channel</a>.</p>
+    
+    <div class="footer-bottom">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <p class="mb-0">&copy; <script>document.write(new Date().getFullYear())</script> Grails框架 | 本站使用Grails <g:meta name="info.app.grailsVersion"/> 构建</p>
+                </div>
             </div>
         </div>
     </div>
