@@ -100,3 +100,28 @@ hibernate:
     queries: false
     use_second_level_cache: false
     use_query_cache: false
+    
+file:
+  upload:
+    # 设置文件上传目录（这里使用相对路径，可以根据需要修改）
+    directory: "/home/kory/javacode/grailsdemos/uploads"
+    # 最大文件大小
+    max-size: 10485760  # 10MB
+    # 允许的文件类型 (MIME类型)
+    allowed-types:
+      - application/pdf
+      - image/jpeg
+      - image/png
+      - application/vnd.ms-excel
+      - application/vnd.openxmlformats-officedocument.spreadsheetml.sheet
+      - application/msword
+      - application/vnd.openxmlformats-officedocument.wordprocessingml.document
+      - text/plain
+
+# Multipart文件上传配置
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 30MB
+      enabled: true

@@ -21,6 +21,11 @@ grails.plugin.springsecurity.controllerAnnotations.staticRules = [
 	[pattern: '/post/**',        access: ['ROLE_ADMIN','ROLE_USER']],
 	[pattern: '/category/**',    access: ['ROLE_ADMIN','ROLE_USER']],
 	[pattern: '/tag/**',         access: ['ROLE_ADMIN','ROLE_USER']],
+	[pattern: '/note/**',        access: ['ROLE_ADMIN','ROLE_USER']],
+	// 文件上传相关的URL安全配置
+    [pattern: '/fileUpload/list',   access: ['ROLE_ADMIN']],
+    [pattern: '/fileUpload/**',     access: ['ROLE_USER', 'ROLE_ADMIN']]
+
 	
 	// [pattern: '/comment/**',     access: ['ROLE_ADMIN','ROLE_USER']],
 	// [pattern: '/user/**',         access: ['ROLE_ADMIN','ROLE_USER']],
